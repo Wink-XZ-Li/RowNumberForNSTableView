@@ -5,7 +5,6 @@
 //  Created by Wink on 2021/4/1.
 //  Copyright © 2021 Wink. All rights reserved.
 //
-
 import Cocoa
 import ObjectiveC
 
@@ -26,7 +25,7 @@ extension NSTableView {
         
         if let scrollView = enclosingScrollView {
             lineNumverView = LineNumberRulerView(tableView: self)
-            
+
             scrollView.verticalRulerView = lineNumverView
             scrollView.hasVerticalRuler = true
             scrollView.rulersVisible = true
@@ -47,6 +46,8 @@ class LineNumberRulerView: NSRulerView {
         }
     }
     
+    weak var headerMaskView: NSView?
+    
     init(tableView: NSTableView) {
         super.init(scrollView: tableView.enclosingScrollView, orientation: .verticalRuler)
         self.font = tableView.font
@@ -54,10 +55,19 @@ class LineNumberRulerView: NSRulerView {
         //厚度
         let digitOfTableRowNumber: Int = String(tableView.numberOfRows).count
         self.ruleThickness = 10+(6.8*CGFloat(digitOfTableRowNumber))
+        let maskView = NSView()
+        self.subviews.append(maskView)
+        headerMaskView = maskView
+        headerMaskView?.wantsLayer = true
+        headerMaskView?.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
     }
     
     override func drawHashMarksAndLabels(in rect: NSRect) {
@@ -81,6 +91,9 @@ class LineNumberRulerView: NSRulerView {
             attributedString.draw(at: NSPoint(x: x, y: -(relativePoint.y)+y+2))
         }
         
+        headerMaskView?.frame = NSRect(x: 0, y: 0, width: self.ruleThickness, height: 27)
+        headerMaskView?.autoresizingMask = [.minXMargin, .minYMargin]
+  
         //画行号
         for num in 0...tableView.numberOfRows where num != tableView.numberOfRows {
             drawLineNumber("\(num+1)",CGFloat(num)*tableRowHeight)
