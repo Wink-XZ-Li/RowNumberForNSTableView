@@ -8,11 +8,13 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
+    @IBOutlet weak var tableView: NSTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.setUpLineNumberView()
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +23,10 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return 5
+    }
 
 }
 

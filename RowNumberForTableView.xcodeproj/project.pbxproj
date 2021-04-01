@@ -13,6 +13,7 @@
 		26C7C3D626154A9100018529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C7C3D426154A9100018529 /* Main.storyboard */; };
 		26C7C3E226154A9100018529 /* RowNumberForTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3E126154A9100018529 /* RowNumberForTableViewTests.swift */; };
 		26C7C3ED26154A9100018529 /* RowNumberForTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3EC26154A9100018529 /* RowNumberForTableViewUITests.swift */; };
+		26C7C3FB26154B0C00018529 /* LineNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7C3FA26154B0C00018529 /* LineNumberRulerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		26C7C3E826154A9100018529 /* RowNumberForTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RowNumberForTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C7C3EC26154A9100018529 /* RowNumberForTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowNumberForTableViewUITests.swift; sourceTree = "<group>"; };
 		26C7C3EE26154A9100018529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C7C3FA26154B0C00018529 /* LineNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberRulerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				26C7C3CE26154A8C00018529 /* AppDelegate.swift */,
 				26C7C3D026154A8C00018529 /* ViewController.swift */,
+				26C7C3FA26154B0C00018529 /* LineNumberRulerView.swift */,
 				26C7C3D226154A9100018529 /* Assets.xcassets */,
 				26C7C3D426154A9100018529 /* Main.storyboard */,
 				26C7C3D726154A9100018529 /* Info.plist */,
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C7C3FB26154B0C00018529 /* LineNumberRulerView.swift in Sources */,
 				26C7C3D126154A8C00018529 /* ViewController.swift in Sources */,
 				26C7C3CF26154A8C00018529 /* AppDelegate.swift in Sources */,
 			);
